@@ -80,7 +80,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
   } else {
   const datas = global;
   const idioma = datas.db.data.users[m.sender].language;
-  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`));
+  const _translate = JSON.parse(fs.readFileSync(`./language/ar.json`));
   const traductor = _translate.plugins.buscador_yts;      
   const results = await yts(text);
   const tes = results.all;
