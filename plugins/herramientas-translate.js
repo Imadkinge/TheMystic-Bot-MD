@@ -5,14 +5,14 @@ import fetch from 'node-fetch';
 const handler = async (m, {args, usedPrefix, command}) => {
   const datas = global
   const idioma = datas.db.data.users[m.sender].language
-  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
+  const _translate = JSON.parse(fs.readFileSync(`./language/ar.json`))
   const tradutor = _translate.plugins.herramientas__translate
 
   const msg = `${tradutor.texto1[0]} ${usedPrefix + command} ${tradutor.texto1[1]}\n*${usedPrefix + command} ${tradutor.texto1[2]}\n*- https://cloud.google.com/translate/docs/languages*`;
   if (!args || !args[0]) return m.reply(msg);
   let lang = args[0];
   let text = args.slice(1).join(' ');
-  const defaultLang = 'es';
+  const defaultLang = 'ar';
   if ((args[0] || '').length !== 2) {
     lang = defaultLang;
     text = args.join(' ');
@@ -32,5 +32,5 @@ const handler = async (m, {args, usedPrefix, command}) => {
     }
   }
 };
-handler.command = /^(translate|traducir|trad)$/i;
+handler.command = /^(translate|traducir|tr)$/i;
 export default handler;
