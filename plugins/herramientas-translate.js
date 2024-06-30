@@ -11,11 +11,11 @@ const handler = async (m, {args, usedPrefix, command}) => {
   const msg = `${tradutor.texto1[0]} ${usedPrefix + command} ${tradutor.texto1[1]}\n*${usedPrefix + command} ${tradutor.texto1[2]}\n*- https://cloud.google.com/translate/docs/languages*`;
   if (!args || !args[0]) return m.reply(msg);
   let lang = args[0];
-  let text = args.slice(1).join(' ');
+  let text = args.slice(1).join('ar ');
   const defaultLang = 'ar';
   if ((args[0] || '').length !== 2) {
     lang = defaultLang;
-    text = args.join(' ');
+    text = args.join('ar ');
   }
   if (!text && m.quoted && m.quoted.text) text = m.quoted.text;
   try {
@@ -32,5 +32,5 @@ const handler = async (m, {args, usedPrefix, command}) => {
     }
   }
 };
-handler.command = /^(translate|traducir|tr)$/i;
+handler.command = /^(translate|traducir|tra)$/i;
 export default handler;
