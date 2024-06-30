@@ -74,7 +74,7 @@ handler.command = /^(play|اغاني)$/i;
 export default handler;
 
 async function search(query, options = {}) {
-  const search = await yts.search({query, hl: 'ar', gl: 'ES', ...options});
+  const search = await yts.search({query, hl: 'ar', gl: 'ar', ...options});
   return search.videos;
 }
 
