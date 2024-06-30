@@ -535,7 +535,7 @@ ${tradutor.texto1[9]} ${user.premiumTime > 0 ? '✅' : (isPrems ? '✅' : '❌')
   } catch {
     const datas = global
     const idioma = datas.db.data.users[m.sender].language
-    const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
+    const _translate = JSON.parse(fs.readFileSync(`./language/ar.json`))
     const tradutor = _translate.plugins.menu_menu
 
     conn.reply(m.chat, tradutor.texto1[29], m);
