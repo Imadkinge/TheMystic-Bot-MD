@@ -12,14 +12,14 @@ const handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, i
   try {
     const datas = global
     const idioma = datas.db.data.users[m.sender].language
-    const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
+    const _translate = JSON.parse(fs.readFileSync(`./language/ar.json`))
     const tradutor = _translate.plugins.menu_menu
     // const pp = imagen7;
 
     // let vn = './media/menu.mp3'
     const img = './Menu2.jpg';
     const d = new Date(new Date + 3600000);
-    const locale = 'es-ES';
+    const locale = 'ar-AR';
     const week = d.toLocaleDateString(locale, { weekday: 'long' });
     const date = d.toLocaleDateString(locale, { day: '2-digit', month: '2-digit', year: 'numeric' });
     const _uptime = process.uptime() * 1000;
@@ -370,7 +370,7 @@ ${tradutor.texto1[9]} ${user.premiumTime > 0 ? '✅' : (isPrems ? '✅' : '❌')
   ▢ _${usedPrefix}qrcode *<txt>*_
   ▢ _${usedPrefix}readmore *<txt1|txt2>*_
   ▢ _${usedPrefix}styletext *<txt>*_
-  ▢ _${usedPrefix}traducir *<txt>*_
+  ▢ _${usedPrefix}lang *<txt>*_
   ▢ _${usedPrefix}nowa *num>*_
   ▢ _${usedPrefix}covid *<pais>*_
   ▢ _${usedPrefix}horario_
